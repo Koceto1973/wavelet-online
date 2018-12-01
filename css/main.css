@@ -26,7 +26,24 @@ content {
 }
 
 a {
+  padding-left: 4vw;
   display:block;
+}
+
+a, a:link {
+  color: MediumSeaGreen;
+}
+
+a, a:visited {
+  color: DarkBlue;
+}
+
+a, a:hover {
+  color: Green;
+}
+
+a, a:active {
+  color: Red;
 }
 
 img {
