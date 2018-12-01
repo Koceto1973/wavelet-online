@@ -34,22 +34,23 @@ header {
 
 nav {
   box-sizing: border-box;
-  margin: 0 1vw 0 0;
+  margin: 0 1vw 2vh 0;
   padding: 2vw;
   border-radius: 2vw;
   height: 80vh;
   width: 21vw;
-  display: inline-block;
   overflow: auto;
 }
 
 content {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 0 2vh 0;
   padding: 2vw;
   height: 80vh;
-  width:72.41vw;
-  display: inline-block;
+  width:74vw;
+  position: absolute;
+  top: 10vh;
+  left:24vw;
   overflow: auto;
 }
 
