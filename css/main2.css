@@ -7,9 +7,13 @@ html, body {
     background-color: #000812;
 }
 
+body {
+  box-sizing: border-box;
+  padding: 2vh 1vw;
+}
+
 header, nav, main, footer {
     border-radius: 1vw;
-    box-sizing: border-box;
     background-color: rgba(128,128,128,0.4);
     font-family: "Times New Roman", Times, serif;
     font-size: 2vw;
@@ -19,9 +23,7 @@ header, nav, main, footer {
 
 header {
     margin: 0;
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 4vh 2vw;
+    border: 0;
     padding: 0;
     height: 6vh;
     width: 98vw;
@@ -32,29 +34,27 @@ header {
 
 nav {
     float: left;
-    margin: 0;
-    border: 0 1vw 2vh 1vw;
-    padding: 2vh 2vw;
-    box-sizing: border-box;
+    margin: 2vh 0;
+    border: 0;
+    padding: 2vh 1vw;
     height: 78vh;
     width: 23vw;
 }
 
 main {
-    float: left;
-    margin: 0;
-    border: 0 1vw 2vh 0;
-    box-sizing: border-box;
-    padding: 2vh 2vw;
+    float: right;
+    margin: 2vh 0;
+    border: 0;
+    padding: 2vh 1vw;
     height:78vh;
-    width: 74vw;
+    width: 70vw;
     text-indent: 2vw;
 }
 
 footer {
     clear: both;
     margin: 0;
-    border: 0 1vw 2vh 1vw;
+    border: 0;
     padding: 0;
     height: 6vh;
     width: 98vw;
