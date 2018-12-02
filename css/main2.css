@@ -1,73 +1,63 @@
-html {
+html, body {
     margin: 0;
     border: 0;
     padding: 0;
     height: 100vh;
-}
-
-body {
-    margin: 1rem;
-    border: 0;
-    padding: 0;
-    box sizing: border-box;
-    height: 100vh;
+    width:100vw;
     background-color: #000812;
 }
 
 header, nav, main, footer {
-    border-radius: 0.5rem;
+    border-radius: 1vw;
+    box-sizing: border-box;
     background-color: rgba(128,128,128,0.4);
     font-family: "Times New Roman", Times, serif;
-    font-size: 1rem;
+    font-size: 2vw;
     font-style: italic;
     color: white;
 }
 
 header {
-    margin: 0 0 0.5rem 0;
-    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 4vh 2vw;
     padding: 0;
-    height: 2rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  text-align: center;
-  line-height: 2rem;
+    height: 6vh;
+    width: 98vw;
+    line-height: 6vh;
+    font-size: 3vw;
+    text-align: center;
 }
 
 nav {
     float: left;
-    margin: 0 0 0.5rem 0;
-    border: 0.5rem;
-    padding: 0;
-    width: 24%;
+    margin: 0;
+    border: 0 1vw 2vh 1vw;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    height: 78vh;
+    width: 23vw;
 }
 
 main {
-    margin: 0 0 0.5rem 0;
-    border: 0;
+    float: left;
+    margin: 0;
+    border: 0 1vw 2vh 0;
     box-sizing: border-box;
-    padding-left: 1rem;
-    float: right;
-    width: 74%;
-    height:calc(100vh - 10rem);
-    text-indent: 4rem;
+    padding: 2vh 2vw;
+    height:78vh;
+    width: 74vw;
+    text-indent: 2vw;
 }
 
 footer {
-    float: left;
-    width: 100%;
-    margin: 0 0 1rem 0;
-    border: 0;
+    clear: both;
+    margin: 0;
+    border: 0 1vw 2vh 1vw;
     padding: 0;
-    height: auto;
-}
-
-footer p {
-  margin 0;
-  border 0;
-  padding 0;
-  text-align: center;
-  line-height: 1.5rem;
+    height: 6vh;
+    width: 98vw;
+    text-align: center;
+    line-height: 6vh;
 }
