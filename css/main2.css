@@ -41,6 +41,32 @@ nav {
     width: 23vw;
 }
 
+.button {
+    margin: 5vw;
+    box-sizing: border-box;
+    border: 5px solid black;
+    border-radius: 2vh;
+    padding: 15px 32px;
+
+    height: 4rem;
+    width:  10rem;
+    display: inline-block;
+
+    box-shadow: 5px 5px 20px 0 rgba(255, 255, 0, 0.3);
+
+    background-color: MediumSeaGreen;
+
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+
+    cursor: pointer;
+}
+
 main {
     float: right;
     margin: 2vh 0;

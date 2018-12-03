@@ -1,13 +1,32 @@
-html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, figure, figcaption, footer, header, nav, output, section, time, mark, audio, video, input, textarea, select {
+a, abbr, address, article, aside, audio,
+b, blockquote, body, button,
+canvas, caption, cite, code,
+dd, del, dfn, div, dl, dt,
+em,
+fieldset, figcaption, figure, footer, form,
+header, html, h1, h2, h3, h4, h5, h6,
+i, img, input, ins,
+kbd,
+label, legend, li,
+mark,
+nav,
+ol, output,
+p, pre,
+q,
+s, samp, section, select, small, span,strong, sub, sup,
+table, tbody, td, textarea, tfoot, th, thead, time, tr,
+u, ul,
+video {
     margin: 0;
     padding: 0;
     border: 0;
+
+    box-sizing: border-box;
+
     /* inherits the browser's font properties: font-size 16px */
     font: inherit;
     /*  specifies the vertical alignment of an inline element */
     vertical-align: baseline;
-
-    box-sizing: border-box;
 
     /*  specifies the height of line boxes within the element. */
     line-height: 1;
