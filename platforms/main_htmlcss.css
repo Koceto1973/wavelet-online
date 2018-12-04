@@ -48,13 +48,12 @@ div {
 }
 
 p {
-  padding-bottom: 10vh;
+  padding-bottom: 2vh;
 }
 
 p::first-letter {
   color: mediumseagreen;
 }
-
 
 
 
