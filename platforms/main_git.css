@@ -41,20 +41,20 @@ h3 a, a:active  {
 }
 
 div {
-  padding: 0 20vw 0 20vw;
+  padding: 10vh 20vw;
   height: 90vh;
   overflow-x: auto;
   overflow-y: auto;
 }
 
-h4 {
-  padding: 10vh 0;
-  font-size: 6vh;
-  color: rgb(28, 110, 204);
+p {
+  padding-bottom: 10vh;
 }
 
-dl {
-  padding-left: 2vw;
+p::first-letter {
+  color: mediumseagreen;
 }
+
+
 
 
