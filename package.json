@@ -8,6 +8,9 @@
     "start": "node server/server.js",
     "start-watch": "nodemon --exec npm start"
   },
+  "engines":{
+    "node": "10.14.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Koceto1973/wavelet-online.git"
