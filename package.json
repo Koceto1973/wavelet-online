@@ -1,0 +1,30 @@
+{
+  "name": "wavelet.online",
+  "version": "1.0.0",
+  "description": "personal presentation site",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server/server.js",
+    "start-watch": "nodemon --exec npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koceto1973/wavelet-online.git"
+  },
+  "keywords": [
+    "wavelet.online"
+  ],
+  "author": "TeamK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koceto1973/wavelet-online/issues"
+  },
+  "homepage": "https://github.com/Koceto1973/wavelet-online#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
