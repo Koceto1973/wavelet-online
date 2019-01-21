@@ -1,20 +1,20 @@
-const app = require('express')();
-const server = require('http').Server(app);
+const {configs} = require('./config/config'); // maintenance, port
+const app = require('express')(); 
 
-const port = process.env.PORT || 3000;
-// const hbs = require('hbs');
+const hbs = require('hbs');
+hbs.registerPartials(__dirname + '/public/partials');
+app.set('view engine', 'hbs');
 
-// middleware, example of catching all routes 
-// app.use((req, res, next) => {
-//   res.render('maintenance.hbs');  // no data injection here
-//   // no next() here, app blocks here
-// });
+if (configs.maintenance) { 
+  app.use((req, res, next) => {   // site under maintenance
+    res.send('maintenance.hbs');  // no next() here, app should block  
+  }); 
+}
 
 // middleware example with static routes ( no modified res based on req )
 // app.use(express.static(__dirname + '/staticAssets')); // if route is here, send it as a response
 
-// hbs.registerPartials(__dirname + '/views/partials');
-// app.set('view engine', 'hbs');
+
 
 // middleware example for site activity logger
 // app.use((req, res, next) => {
@@ -34,13 +34,12 @@ app.get('/', (req, res) => {
   res.send('Hello world!');
 });
 
-// middleware, unknown route sends back json with errorMessage
-app.use((req, res, next) => {
+app.use((req, res, next) => { // unknown route handler
   res.send({
     errorMessage: 'Unable to handle request'
   });
 });
 
-server.listen(port, () => {
-    console.log(`Server is up and running on port ${port}!`); 
-});
+app.listen(configs.port, () => {
+    console.log(`Server is up and running on port ${configs.port}!`); 
+}); // https://limitless-bayou-85712.herokuapp.com/
