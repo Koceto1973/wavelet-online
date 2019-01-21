@@ -1,44 +1,26 @@
 const {configs} = require('./config/config'); // maintenance, port
-const app = require('express')(); 
+
+const path = require('path');
+
+const express = require('express');
+const app = express(); 
 
 const hbs = require('hbs');
 hbs.registerPartials(__dirname + '/public/partials');
 app.set('view engine', 'hbs');
 
+app.use(express.static(path.join(__dirname ,'../public/css'))); 
+app.use(express.static(path.join(__dirname ,'../public/img')));
+
 if (configs.maintenance) { 
   app.use((req, res, next) => {   // site under maintenance
-    res.send('maintenance.hbs');  // no next() here, app should block  
+    res.sendFile(path.join(__dirname ,'../public/index_maintenance.html'))  // no next() here, app should block  
   }); 
 }
 
-// middleware example with static routes ( no modified res based on req )
-// app.use(express.static(__dirname + '/staticAssets')); // if route is here, send it as a response
+// unknown route
 
-
-
-// middleware example for site activity logger
-// app.use((req, res, next) => {
-//   var now = new Date().toString();
-//   var log = `${now}: ${req.method} ${req.url}`;
-
-//   console.log(log);
-//   fs.appendFile('server.log', log + '\n', (error)=>{ 
-//     if (error) {
-//       console.log('Unable to append the server log!');
-//     }
-//   });
-//   next();
-// });
-
-app.get('/', (req, res) => {
-  res.send('Hello world!');
-});
-
-app.use((req, res, next) => { // unknown route handler
-  res.send({
-    errorMessage: 'Unable to handle request'
-  });
-});
+// activity logger
 
 app.listen(configs.port, () => {
     console.log(`Server is up and running on port ${configs.port}!`); 
