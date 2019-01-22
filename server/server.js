@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 const express = require('express');
 
@@ -19,12 +20,25 @@ if (configs.maintenance) {
   });
 }
 
+// activity logger
+app.use((req, res, next) => {
+  const now = new Date().toString();
+  const logEntry = `${now}: ${req.method} ${req.url}`;
+  fs.appendFile(path.join(__dirname, '../server/server.log'), logEntry.concat('\n'), (error) => {
+    if (error) {
+      console.log(error);
+    }
+  });
+  next();
+});
+
 // known routes
 
 // unknown route
-
-// activity logger
+app.get('/', (req, res) => {
+  res.send('Page not found!');
+});
 
 app.listen(configs.port, () => {
   console.log(`Server is up and running on port ${configs.port}!`);
-}); // https://limitless-bayou-85712.herokuapp.com/
+});

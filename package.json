@@ -4,9 +4,9 @@
   "description": "personal presentation site",
   "main": "server.js",
   "scripts": {
-    "test": "test",
-    "start": "node server/server.js",
-    "start-watch": "nodemon --exec npm start"
+    "start-debug": "nodemon --inspect-brk server/server.js",
+    "start-watch": "nodemon --exec npm start",
+    "start": "node server/server.js"
   },
   "engines": {
     "node": "10.14.2"
