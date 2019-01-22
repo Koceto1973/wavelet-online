@@ -23,14 +23,18 @@ div {
 }
 
 #experience { border-collapse: collapse; }
-#experience tr:hover { background-color: DarkGrey; }
-#experience th, td {
+experience th, td {
     padding-left: 20px;
     text-align: left;
 }
 
 #github {
   color: MediumSeaGreen;
+}
+
+a:hover {
+  color: rgb(194, 50, 25);
+  background-color: DarkGrey;
 }
 
 #contact{
