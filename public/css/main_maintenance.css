@@ -37,11 +37,15 @@ a:hover {
   background-color: DarkGrey;
 }
 
-#contact{
+#contact {
   position: relative;
     bottom: 10px;
     width: 200px;
-    height: 20px;
+    height: 30px;
     text-align: center;
     border: 1px solid MediumSeaGreen;
+}
+
+#mail {
+  margin-top: 5px;
 }
