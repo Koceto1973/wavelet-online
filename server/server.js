@@ -28,18 +28,19 @@ app.use((req, res, next) => {
   if (configs.maintenance) {
     res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next() here, app should block
   } else {
+    process.env.route = req.path;
     next();
   }
 });
 
-// known routes
-app.get('/', (req, res) => {
-  res.send('Main set of pages!');
-});
-
-// unknown route
 app.get('*', (req, res) => {
-  res.send('Main page!');
+  switch (process.env.route) {
+    case '/': // home page
+      res.send('Home page!');
+      break;
+    default: // unknown routes
+      res.send('Default page!');
+  }
 });
 
 app.listen(configs.port, () => {
