@@ -33,11 +33,14 @@ app.use((req, res, next) => {
 });
 
 // known routes
+app.get('/', (req, res) => {
+  res.send('Main set of pages!');
+});
 
 // unknown route
-// app.get('/*', (req, res) => {
-//   res.send('Page not found!');
-// });
+app.get('*', (req, res) => {
+  res.send('Main page!');
+});
 
 app.listen(configs.port, () => {
   console.log(`Server is up and running on port ${configs.port}!`);
