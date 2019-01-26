@@ -47,6 +47,7 @@ app.get(/^/, (req, res) => {
       res.render('../public/index_b.hbs', {
         hrefBack: '/',
         pageTitle: 'Layout basic, stack of blocks',
+        prevPage: 'Home page',
       });
       break;
     case '/p': // layout by the position property
@@ -73,42 +74,56 @@ app.get(/^/, (req, res) => {
       res.render('../public/platforms/iosswift.hbs', {
         hrefBack: '/b',
         pageTitle: 'IOS11 / Swift 4.2',
+        prevPage: 'Layout basic page',
       });
       break;
     case '/b/io/p':
       res.render('../public/projects/ios_swift_projects.hbs', {
         hrefBack: '/b/io',
         pageTitle: 'IOS / Swift projects',
+        prevPage: 'IOS / Swift page',
       });
       break;
     case '/b/ht':
       res.render('../public/platforms/htmlcss.hbs', {
         hrefBack: '/b',
         pageTitle: 'HTML5 / CSS3',
+        prevPage: 'Layout basic page',
       });
       break;
     case '/b/ht/p':
       res.render('../public/projects/html_css_projects.hbs', {
         hrefBack: '/b/ht',
         pageTitle: 'HTML / CSS projects',
+        prevPage: 'HTML / CSS page',
       });
       break;
     case '/b/js':
       res.render('../public/platforms/javascript.hbs', {
         hrefBack: '/b',
         pageTitle: 'JavaScript / Node.js',
+        prevPage: 'Layout basic page',
       });
       break;
     case '/b/js/p':
       res.render('../public/projects/javascript_projects.hbs', {
         hrefBack: '/b/js',
         pageTitle: 'JavaScript / Node.js projects',
+        prevPage: 'JavaScript / Node.js page',
+      });
+      break;
+    case '/b/ds':
+      res.render('../public/platforms/data_storage.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'Data Storage',
+        prevPage: 'Layout basic page',
       });
       break;
     case '/b/git':
       res.render('../public/platforms/git.hbs', {
         hrefBack: '/b',
         pageTitle: 'Git VCS',
+        prevPage: 'Layout basic page',
       });
       break;
     default: // unknown routes
