@@ -69,6 +69,18 @@ app.get(/^/, (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
       // res.render('../public/index_g.hbs');
       break;
+    case '/b/ht':
+      res.render('../public/platforms/htmlcss.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'HTML5 / CSS3',
+      });
+      break;
+    case '/b/ht/p':
+      res.render('../public/projects/html_css_projects.hbs', {
+        hrefBack: '/b/ht',
+        pageTitle: 'HTML5 / CSS3',
+      });
+      break;
     case '/b/js':
       res.render('../public/platforms/javascript.hbs', {
         hrefBack: '/b',
