@@ -64,6 +64,9 @@ app.get(/^/, (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
       // res.render('../public/index_g.hbs');
       break;
+    case '/g/git': // layout by the grid model
+      res.render('../public/platforms/git.hbs');
+      break;
     default: // unknown routes
       res.render('../public/index.hbs');
       // res.sendFile(path.join(__dirname, '../public/index.html'));
