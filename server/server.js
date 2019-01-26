@@ -13,6 +13,7 @@ app.set('view engine', 'hbs');
 
 app.use(express.static(path.join(__dirname, '../public/css')));
 app.use(express.static(path.join(__dirname, '../public/platforms')));
+app.use(express.static(path.join(__dirname, '../public/projects')));
 app.use(express.static(path.join(__dirname, '../public/img')));
 app.use(express.static(path.join(__dirname, '../public/svg')));
 app.use(express.static(path.join(__dirname, '../public/icons')));
@@ -42,8 +43,11 @@ app.get(/^/, (req, res) => {
     case '/': // home page
       res.render('../public/index.hbs');
       break;
-    case '/b': // basic layout stack of blocks
-      res.render('../public/index_b.hbs');
+    case '/b':
+      res.render('../public/index_b.hbs', {
+        hrefBack: '/',
+        pageTitle: 'Layout basic, stack of blocks',
+      });
       break;
     case '/p': // layout by the position property
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
@@ -65,8 +69,23 @@ app.get(/^/, (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
       // res.render('../public/index_g.hbs');
       break;
-    case '/g/git': // layout by the grid model
-      res.render('../public/platforms/git.hbs');
+    case '/b/js':
+      res.render('../public/platforms/javascript.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'JavaScript / Node.js',
+      });
+      break;
+    case '/b/js/p':
+      res.render('../public/projects/javascript_projects.hbs', {
+        hrefBack: '/b/js',
+        pageTitle: 'JavaScript / Node.js projects',
+      });
+      break;
+    case '/b/git':
+      res.render('../public/platforms/git.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'Git VCS',
+      });
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
