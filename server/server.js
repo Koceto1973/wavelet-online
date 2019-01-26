@@ -45,19 +45,24 @@ app.get(/^/, (req, res) => {
       res.render('../public/index_b.hbs');
       break;
     case '/p': // layout by the position property
-      res.render('../public/index_p.hbs');
+      res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
+      // res.render('../public/index_p.hbs');
       break;
     case '/ft': // layout by the float property
-      res.render('../public/index_ft.hbs');
+      res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
+      // res.render('../public/index_ft.hbs');
       break;
     case '/bi': // layout by the block and inline set of properties
-      res.render('../public/index_bi.hbs');
+      res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
+      // res.render('../public/index_bi.hbs');
       break;
     case '/fx': // layout by the flexbox model
-      res.render('../public/index_fx.hbs');
+      res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
+      // res.render('../public/index_fx.hbs');
       break;
     case '/g': // layout by the grid model
-      res.render('../public/index_g.hbs');
+      res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
+      // res.render('../public/index_g.hbs');
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
