@@ -69,6 +69,18 @@ app.get(/^/, (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
       // res.render('../public/index_g.hbs');
       break;
+    case '/b/io':
+      res.render('../public/platforms/iosswift.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'IOS11 / Swift 4.2',
+      });
+      break;
+    case '/b/io/p':
+      res.render('../public/projects/ios_swift_projects.hbs', {
+        hrefBack: '/b/io',
+        pageTitle: 'IOS / Swift projects',
+      });
+      break;
     case '/b/ht':
       res.render('../public/platforms/htmlcss.hbs', {
         hrefBack: '/b',
@@ -78,7 +90,7 @@ app.get(/^/, (req, res) => {
     case '/b/ht/p':
       res.render('../public/projects/html_css_projects.hbs', {
         hrefBack: '/b/ht',
-        pageTitle: 'HTML5 / CSS3',
+        pageTitle: 'HTML / CSS projects',
       });
       break;
     case '/b/js':
