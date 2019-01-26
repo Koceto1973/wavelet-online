@@ -14,6 +14,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, '../public/css')));
 app.use(express.static(path.join(__dirname, '../public/img')));
 app.use(express.static(path.join(__dirname, '../public/svg')));
+app.use(express.static(path.join(__dirname, '../public/icons')));
+app.use(express.static(path.join(__dirname, '../public/icons')));
 
 // activity logger & maintenance module
 app.use((req, res, next) => {
@@ -34,7 +36,7 @@ app.use((req, res, next) => {
   }
 });
 
-app.get('*', (req, res) => {
+app.get(/^/, (req, res) => {
   switch (process.env.route) {
     case '/': // home page
       res.render('../public/index.hbs');
@@ -59,6 +61,7 @@ app.get('*', (req, res) => {
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
+      // res.sendFile(path.join(__dirname, '../public/index.html'));
   }
 });
 
