@@ -70,6 +70,20 @@ app.get(/^/, (req, res) => {
       res.sendFile(path.join(__dirname, '../public/index_maintenance.html'));
       // res.render('../public/index_g.hbs');
       break;
+    case '/b/ch':
+      res.render('../public/platforms/csharp.hbs', {
+        hrefBack: '/b',
+        pageTitle: 'C#',
+        prevPage: 'Layout basic page',
+      });
+      break;
+    case '/b/ch/p':
+      res.render('../public/projects/csharp_projects.hbs', {
+        hrefBack: '/b/ch',
+        pageTitle: 'C# projects',
+        prevPage: 'C#',
+      });
+      break;
     case '/b/io':
       res.render('../public/platforms/iosswift.hbs', {
         hrefBack: '/b',
