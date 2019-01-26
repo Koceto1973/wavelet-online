@@ -12,6 +12,7 @@ hbs.registerPartials(path.join(__dirname, '../public/partials'));
 app.set('view engine', 'hbs');
 
 app.use(express.static(path.join(__dirname, '../public/css')));
+app.use(express.static(path.join(__dirname, '../public/platforms')));
 app.use(express.static(path.join(__dirname, '../public/img')));
 app.use(express.static(path.join(__dirname, '../public/svg')));
 app.use(express.static(path.join(__dirname, '../public/icons')));
