@@ -31,7 +31,8 @@ app.use((req, res, next) => {
 
   // site under maintenance
   if (configs.maintenance) {
-    res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next() here, app should block
+    res.send(configs.maintenance);
+    // res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next() here, app should block
   } else {
     process.env.route = req.path;
     next();
