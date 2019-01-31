@@ -29,8 +29,14 @@ app.use((req, res, next) => {
     }
   });
 
-  // site under maintenance
-  if (configs.maintenance) {
+  if (req.headers.tuneKey === process.env.tuneKey) { // toggle maintenance mode
+    if (req.headers.maintenance === 'toggle') {
+      configs.maintenance = configs.maintenance ? false: true;
+      process.env.maintenance = configs.maintenance;
+    }
+  }
+
+  if (configs.maintenance) { // site maintenance response
     res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next() here, app should block
   } else {
     process.env.route = req.path;
@@ -156,6 +162,16 @@ app.get(/^/, (req, res) => {
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
+  }
+});
+
+app.post(/^/, (req, res) => {
+  switch (process.env.route) {
+    case '/m': // toggle maintenance
+      res.status(200).send({ note: 'Maintenance completed!' });
+      break;
+    default: // unknown routes
+      res.status(404).send({ note: 'Unhandled post route!' });
   }
 });
 
