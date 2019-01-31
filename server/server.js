@@ -31,8 +31,8 @@ app.use((req, res, next) => {
 
   if (req.headers.tuneKey === process.env.tuneKey) { // toggle maintenance mode
     if (req.headers.maintenance === 'toggle') {
-      configs.maintenance = configs.maintenance ? false: true;
-      process.env.maintenance = configs.maintenance;
+      configs.maintenance = configs.maintenance ? false : true;
+      configs.herokuConfig.maintenance = configs.maintenance; // set maintenance on remote
     }
   }
 
