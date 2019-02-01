@@ -33,8 +33,14 @@ app.use((req, res, next) => {
     configs.maintenance = !configs.maintenance;
   }
 
-  if (configs.maintenance) { // site maintenance response
-    res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next() here, app should block
+  // if (configs.maintenance) { // site maintenance response
+  if (true) {
+    const test = {
+      conf: configs,
+      reqHeaders: req.headers,
+    };
+    res.send(test);
+    // res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
   } else {
     process.env.route = req.path;
     next();
