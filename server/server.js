@@ -29,10 +29,8 @@ app.use((req, res, next) => {
     }
   });
 
-  if (req.headers.tuneKey === process.env.tuneKey) { // toggle maintenance mode
-    if (req.headers.maintenance === 'toggle') {
-      configs.maintenance = configs.maintenance ? false : true;
-    }
+  if (req.headers.tunekey === configs.tuneKey && req.headers.maintenance === 'toggle') { // toggle maintenance mode
+    configs.maintenance = !configs.maintenance;
   }
 
   if (configs.maintenance) { // site maintenance response
