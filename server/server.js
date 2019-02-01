@@ -29,20 +29,8 @@ app.use((req, res, next) => {
     }
   });
 
-  if (req.headers.tunekey === configs.tuneKey && req.headers.maintenance === 'toggle') { // toggle maintenance mode
-    configs.maintenance = !configs.maintenance;
-  }
-
-  // if (configs.maintenance) { // site maintenance response
-  if (true) {
-    const test = {
-      conf: configs,
-      reqHeaders: req.headers,
-    };
-    res.test = test;
-    process.env.route = req.path;
-    next();
-    // res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
+  if (configs.maintenance) { // site maintenance response
+    res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
   } else {
     process.env.route = req.path;
     next();
@@ -167,16 +155,6 @@ app.get(/^/, (req, res) => {
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
-  }
-});
-
-app.post(/^/, (req, res) => {
-  switch (process.env.route) {
-    case '/m': // toggle maintenance
-      res.status(200).send(res.test);
-      break;
-    default: // unknown routes
-      res.status(404).send({ note: 'Unhandled post route!' });
   }
 });
 
