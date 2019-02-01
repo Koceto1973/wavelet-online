@@ -1,6 +1,14 @@
 const port = process.env.PORT || 3000;
 
-const maintenance = process.env.maintenance ? process.env.maintenance : false || false;
+let maintenance = true;
+
+if (process.env.NODE_ENV === 'production') {
+  maintenance = process.env.maintenance;
+} else {
+  maintenance = false;
+}
+
+// maintenance = true; // set maintenance from code
 
 exports.configs = {
   maintenance,

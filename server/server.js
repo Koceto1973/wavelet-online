@@ -32,13 +32,12 @@ app.use((req, res, next) => {
   if (configs.maintenance) { // site maintenance response
     res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
   } else {
-    process.env.route = req.path;
     next();
   }
 });
 
 app.get(/^/, (req, res) => {
-  switch (process.env.route) {
+  switch (req.path) {
     case '/': // home page
       res.render('../public/index.hbs');
       break;
