@@ -39,7 +39,9 @@ app.use((req, res, next) => {
       conf: configs,
       reqHeaders: req.headers,
     };
-    res.send(test);
+    res.test = test;
+    process.env.route = req.path;
+    next();
     // res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
   } else {
     process.env.route = req.path;
@@ -171,7 +173,7 @@ app.get(/^/, (req, res) => {
 app.post(/^/, (req, res) => {
   switch (process.env.route) {
     case '/m': // toggle maintenance
-      res.status(200).send({ note: 'Maintenance completed!' });
+      res.status(200).send(res.test);
       break;
     default: // unknown routes
       res.status(404).send({ note: 'Unhandled post route!' });
