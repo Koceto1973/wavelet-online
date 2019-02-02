@@ -29,7 +29,8 @@ app.use((req, res, next) => {
     }
   });
 
-  if (configs.maintenance === 'true') { // site maintenance response
+  const maintenanceMode = configs.env === 'development' ? configs.maintenance : process.env.maintenance;
+  if (maintenanceMode) { // site maintenance response
     res.sendFile(path.join(__dirname, '../public/index_maintenance.html')); // no next()
   } else {
     next();
