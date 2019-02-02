@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 const hbs = require('hbs');
-const { configs } = require('./config/config'); // maintenance, port
+const { configs } = require('./config/config');
 
 hbs.registerPartials(path.join(__dirname, '../public/partials'));
 app.set('view engine', 'hbs');
@@ -154,7 +154,7 @@ app.get(/^/, (req, res) => {
       });
       break;
     case '/r':
-      if (req.query.key && req.query.key.toString() === 'test.key') {
+      if (req.query.key && req.query.key.toString() === configs.userKey) {
         res.render('../public/index_r.hbs', {
           hrefBack: '/b',
           pageTitle: 'Personal Resume',
