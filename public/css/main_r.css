@@ -1,4 +1,5 @@
-html,body,content,h3,h4,div,p,a {
+html,body,content,h3,div,p,a,
+main,header,footer {
   font-family: "Times New Roman", Times, serif;
   line-height: 4vh;
   font-size: 3vh;
@@ -13,43 +14,63 @@ body {
   background-color: #000812
 }
 
-h2 {
-  padding: 2vh 2vw;
-  font-size: 5vh;
-}
-
-h3 {
+header {
   padding: 0 0 0 2vw;
   background-color: DarkGray;
 }
 
-h3 span {
+header span {
   padding: 0 1em 0 0;
   color: black;
 }
 
-h3 a, a:link    {
+header a, a:link    {
   text-decoration: none;
   color: MediumSeaGreen;
 }
-h3 a, a:visited {
+header a, a:visited {
   text-decoration: none;
   color:       SeaGreen;
 }
-h3 a, a:hover   {
+header a, a:hover   {
   text-decoration: underline;
   color:          Green;
 }
-h3 a, a:active  {
+header a, a:active  {
   text-decoration: none;
   color:            Red;
 }
 
-div {
+main {
   padding: 0 20vw 0 20vw;
   height: 90vh;
   overflow-x: auto;
   overflow-y: auto;
 }
 
+footer {
+  padding: 0 0 0 2vw;
+  background-color: DarkGray;
+}
 
+footer span {
+  padding: 0 1em 0 0;
+  color: black;
+}
+
+footer a, a:link    {
+  text-decoration: none;
+  color: MediumSeaGreen;
+}
+footer a, a:visited {
+  text-decoration: none;
+  color:       SeaGreen;
+}
+footer a, a:hover   {
+  text-decoration: underline;
+  color:          Green;
+}
+footer a, a:active  {
+  text-decoration: none;
+  color:            Red;
+}
