@@ -153,6 +153,17 @@ app.get(/^/, (req, res) => {
         prevPage: 'Layout basic page',
       });
       break;
+    case '/r':
+      if (req.query.key === 'test.key') {
+        res.render('../public/index_r.hbs', {
+          hrefBack: '/b',
+          pageTitle: 'Personal Resume',
+          prevPage: 'Layout basic page',
+        });
+      } else {
+        res.render('../public/index.hbs');
+      }
+      break;
     default: // unknown routes
       res.render('../public/index.hbs');
   }

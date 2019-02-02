@@ -1,0 +1,55 @@
+html,body,content,h3,h4,div,p,a {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 4vh;
+  font-size: 3vh;
+  font-style: italic;
+  color: white;
+}
+
+body {
+  padding-top: 1vh;
+  height:100vh;
+  width:100vw;
+  background-color: #000812
+}
+
+h2 {
+  padding: 2vh 2vw;
+  font-size: 5vh;
+}
+
+h3 {
+  padding: 0 0 0 2vw;
+  background-color: DarkGray;
+}
+
+h3 span {
+  padding: 0 1em 0 0;
+  color: black;
+}
+
+h3 a, a:link    {
+  text-decoration: none;
+  color: MediumSeaGreen;
+}
+h3 a, a:visited {
+  text-decoration: none;
+  color:       SeaGreen;
+}
+h3 a, a:hover   {
+  text-decoration: underline;
+  color:          Green;
+}
+h3 a, a:active  {
+  text-decoration: none;
+  color:            Red;
+}
+
+div {
+  padding: 0 20vw 0 20vw;
+  height: 90vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+

@@ -27,7 +27,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "prompt": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
