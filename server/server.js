@@ -154,16 +154,16 @@ app.get(/^/, (req, res) => {
       });
       break;
     case '/r':
-      console.log(req.query.key);
-      if (req.query.key == 'testkey') {
-        res.render('../public/index_r.hbs', {
-          hrefBack: '/b',
-          pageTitle: 'Personal Resume',
-          prevPage: 'Layout basic page',
-        });
-      } else {
-        res.render('../public/index.hbs');
-      }
+      res.send(req.query);
+      // if (req.query.key && req.query.key.toString() === 'testkey') {
+      //   res.render('../public/index_r.hbs', {
+      //     hrefBack: '/b',
+      //     pageTitle: 'Personal Resume',
+      //     prevPage: 'Layout basic page',
+      //   });
+      // } else {
+      //   res.render('../public/index.hbs');
+      // }
       break;
     default: // unknown routes
       res.render('../public/index.hbs');
