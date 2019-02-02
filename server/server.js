@@ -154,7 +154,8 @@ app.get(/^/, (req, res) => {
       });
       break;
     case '/r':
-      if (req.query.key === 'test.key') {
+      console.log(req.query.key);
+      if (req.query.key === 'testkey') {
         res.render('../public/index_r.hbs', {
           hrefBack: '/b',
           pageTitle: 'Personal Resume',
