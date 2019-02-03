@@ -1,21 +1,26 @@
-html,body,content,h3,div,p,a,
-main,header,footer {
+html,body,content,h3,div,p,a,main,header,footer,
+nav, section {
   font-family: "Times New Roman", Times, serif;
   line-height: 4vh;
   font-size: 3vh;
   font-style: italic;
-  color: white;
+  color: black;
+  box-sizing: border-box;
 }
 
 body {
   padding-top: 1vh;
+  padding-bottom: 1vh;
   height:100vh;
   width:100vw;
-  background-color: #000812
+  background-color: #000812;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
-  padding: 0 0 0 2vw;
+  padding: 0 0 0 1vw;
   background-color: DarkGray;
   display: flex;
 }
@@ -31,7 +36,7 @@ header span {
   width: 100%;
   color: black;
   text-align: center;
-  flex-grow: 19;
+  flex-grow: 20
 }
 
 header a, a:link    {
@@ -52,14 +57,31 @@ header a, a:active  {
 }
 
 main {
-  padding: 0 20vw 0 20vw;
+  box-sizing: border-box;
+  border-width: 1vh 1vw;
+  border-style: solid;
+  border-color: #000812;
   height: 90vh;
-  overflow-x: auto;
-  overflow-y: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav {
+  width:23vw;  
+  padding: 1vh 1vw;
+  background-color: darkgrey;
+}
+
+section {
+  width:74vw;
+  padding: 1vh 1vw;
+  background-color: darkgrey;
 }
 
 footer {
-  padding: 0 0 0 2vw;
+  padding: 0 0 0 1vw;
   background-color: DarkGray;
   display: flex;
   flex-direction: row;
