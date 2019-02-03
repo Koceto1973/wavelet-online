@@ -20,7 +20,9 @@ body {
 }
 
 header {
-  padding: 0 0 0 1vw;
+  padding: 1vh 1vw;
+  height: 8vh;
+  line-height: 7vh;
   font-size: 4vh;
   background-color: DarkGray;
   display: flex;
@@ -36,6 +38,7 @@ header span {
   display: inline-block;
   width: 100%;
   color: black;
+  font-size: 5vh;
   text-align: center;
   text-decoration: underline;
   font-weight: bold;
@@ -80,12 +83,19 @@ nav {
   justify-content: space-between;
 }
 
-#vOptions {
+.Options {
   text-align: center;
   height: 30vh;
   display:flex;
   justify-content: space-around;
+}
+
+#v {
   flex-direction: column;
+}
+
+#h {
+  flex-direction: row;
 }
 
 #button {
@@ -93,38 +103,39 @@ nav {
   justify-content: center;
 }
 
-.button {
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 1vh;
-    padding: 1vh 1vw;
+button {
+  box-sizing: border-box;
+  border: 1px solid mediumseagreen;
+  border-radius: 1vh;
+  padding: 1vh 1vw;
 
-    height: 4vh;
-    width:  12vw;
-    display: inline-block;
+  height: 5vh;
+  width:  12vw;
+  
+  box-shadow: 5px 5px 20px 0 rgba(36, 36, 33, 0.3);
 
-    box-shadow: 5px 5px 20px 0 rgba(36, 36, 33, 0.3);
+  background-color: rgb(110, 114, 111);
 
-    background-color: rgb(110, 114, 111);
+  color: black;
+  line-height: 3vh;
+  font-size: 3vh;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-    color: black;
-    font-size: 3vh;
-    text-align: center;
-    text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.button:hover {
+button:hover {
   box-shadow: 5px 5px 20px 0 rgba(255, 255, 255, 0.3);
 }
 
-.button:active {
+button:active {
   box-shadow: 5px 5px 20px 0 rgba(255, 255, 255, 0.9);
   transform: translateY(4px);
 }
@@ -133,6 +144,59 @@ section {
   width:80vw;
   padding: 1vh 1vw;
   background-color: darkgrey;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+#sectionHeader {
+  height: 5%;
+}
+
+#lineSeparator {
+  background-color: black;
+  height: 2px;
+}
+
+#sectionContent {
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#text {
+  border-radius: 1vh;
+  padding: 1vh 1vw;
+  width: 49%;
+  background-color: #000812;
+  color: white;
+}
+
+aside {
+  padding: 1vh 1vw;
+  width: 49%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+picture {
+  height: 85%;
+}
+
+.logo_image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#joke {
+  height: 6%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 
 footer {
