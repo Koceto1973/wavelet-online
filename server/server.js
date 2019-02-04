@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '../public/projects')));
 app.use(express.static(path.join(__dirname, '../public/img')));
 app.use(express.static(path.join(__dirname, '../public/svg')));
 app.use(express.static(path.join(__dirname, '../public/icons')));
-app.use(express.static(path.join(__dirname, '../public/icons')));
+app.use(express.static(path.join(__dirname, '../public/scripts')));
 
 // activity logger & maintenance module
 app.use((req, res, next) => {

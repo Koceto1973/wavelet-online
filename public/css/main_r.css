@@ -98,7 +98,7 @@ nav {
   flex-direction: row;
 }
 
-#button {
+#settings {
   display:flex;
   justify-content: center;
 }

@@ -10,8 +10,6 @@ if (env === 'development') {
   userKey = process.env.userKey;
 }
 
-console.log(userKey);
-
 exports.configs = {
   port,
   env,
