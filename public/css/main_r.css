@@ -98,7 +98,7 @@ nav {
   flex-direction: row;
 }
 
-#settings {
+#Settings {
   display:flex;
   justify-content: center;
 }
