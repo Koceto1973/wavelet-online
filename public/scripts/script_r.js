@@ -1,7 +1,34 @@
+const text = {
+  id: 'My name is Konstantin Kralev...',
+  background: 'My working background is ...',
+  current: 'From the end of 2014 I work as ...',
+  ccpp: 'I met C and C++ at ...',
+  csharp: 'After having familiarity with C++, I felt C# as ...',
+  swift: 'It was the first couple of front end courses I took - IOS11 and Swift ...',
+  html: 'The HTML/CSS course I took was ... ',
+  js: 'I find really entertaining the way JS and Node.js work together ...',
+  math: 'Math is a friend ...',
+  physics: 'Physics is where math takes meaning ...',
+  cs: 'Computer science has gone surprisingly far ...',
+  roots: 'Thinking over a problem might be unpleasant, but the blessing to find the solution is a pure pleasure ...',
+  resources: 'Time is precious ...',
+  reality: 'Taking care of the family ...',
+  shortterm: 'Completing the resume ...',
+  midterm: 'Completing the Node.js master class ...',
+  longterm: 'Learn more about databases and server side programming ...',
+  colors: 'colors options ...',
+  fonts: 'fonts options ...',
+  effects: 'effects options ...',
+};
+
 const addButtons = (arr) => {
   arr.forEach((item) => {
     document.getElementById('h').insertAdjacentHTML('beforeend', `<li><button id=${item}>${item}</button></li>`);
   });
+};
+
+const addContent = (txt) => {
+  document.getElementById('text').textContent = txt;
 };
 
 const init = () => {
@@ -57,7 +84,7 @@ document.getElementById('Settings').addEventListener('click', () => {
   document.getElementById('joke').textContent = '... without the one, you actually need :)';
 });
 
-// h-buttons init listeners
+// h-buttons listeners
 document.getElementById('sectionHeader').addEventListener('click', (event) => {
   const { id } = event.target;
   if (id !== 'h') { // button was pressed
@@ -68,67 +95,69 @@ document.getElementById('sectionHeader').addEventListener('click', (event) => {
     });
     // format the target button correctly
     document.getElementById(id).style.border = '3px solid mediumseagreen';
+    // clear text
+    document.getElementById('text').textContent = '';
     // switch the target request
     switch (id) {
       case 'ID':
-        console.log('ID');
+        addContent(text.id);
         break;
       case 'Background':
-        console.log('Background');
+        addContent(text.background);
         break;
       case 'Current':
-        console.log('Current');
+        addContent(text.current);
         break;
       case 'C/C++':
-        console.log('C/C++');
+        addContent(text.ccpp);
         break;
       case 'C#':
-        console.log('C#');
+        addContent(text.csharp);
         break;
       case 'Swift':
-        console.log('Swift');
+        addContent(text.swift);
         break;
       case 'HTML/CSS':
-        console.log('HTML/CSS');
+        addContent(text.html);
         break;
       case 'JS/Node.js':
-        console.log('JS/Node.js');
+        addContent(text.js);
         break;
       case 'Math':
-        console.log('Math');
+        addContent(text.math);
         break;
       case 'Physics':
-        console.log('Physics');
+        addContent(text.physics);
         break;
       case 'CS':
-        console.log('CS');
+        addContent(text.cs);
         break;
       case 'Roots':
-        console.log('Roots');
+        addContent(text.roots);
         break;
       case 'Resources':
-        console.log('Resources');
+        addContent(text.resources);
         break;
       case 'Reality':
-        console.log('Reality');
+        addContent(text.reality);
         break;
       case 'ShortTerm':
-        console.log('ShortTerm');
+        addContent(text.shortterm);
         break;
       case 'MidTerm':
-        console.log('MidTerm');
+        addContent(text.midterm);
         break;
       case 'LongTerm':
-        console.log('LongTerm');
+        addContent(text.longterm);
         break;
       case 'colors':
-        console.log('colors');
+        addContent(text.colors);
         break;
       case 'font':
-        console.log('font');
+        addContent(text.fonts);
         break;
       case 'effects':
-        console.log('effects');
+        addContent(text.effects);
         break;
 
       default:
