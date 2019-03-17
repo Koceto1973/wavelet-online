@@ -164,6 +164,15 @@ app.get(/^/, (req, res) => {
         res.render('../public/index.hbs');
       }
       break;
+    case '/ip':
+      if (req.query.key && req.query.key.toString() === configs.userKey) {
+        res.status(200);
+        res.send('req.URL should be here!');
+      } else {
+        res.status(500);
+        res.send('Unable to resolve userKey!');
+      }
+      break;
     default: // unknown routes
       res.render('../public/index.hbs');
   }
