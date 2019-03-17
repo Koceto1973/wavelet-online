@@ -154,7 +154,7 @@ app.get(/^/, (req, res) => {
       });
       break;
     case '/r':
-      if (req.query.key && req.query.key.toString() === configs.userKey) {
+      if (req.query.userKey && req.query.userKey.toString() === configs.userKey) {
         res.render('../public/index_r.hbs', {
           hrefBack: '/b',
           pageTitle: 'Personal Resume',
@@ -165,9 +165,9 @@ app.get(/^/, (req, res) => {
       }
       break;
     case '/ip':
-      if (req.query.key && req.query.key.toString() === configs.userKey) {
+      if (req.query.userKey && req.query.userKey.toString() === configs.userKey) {
         res.status(200);
-        res.send('req.URL should be here!');
+        res.send(req.headers.host.toString());
       } else {
         res.status(500);
         res.send('Unable to resolve userKey!');
