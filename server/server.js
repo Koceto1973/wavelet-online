@@ -167,7 +167,7 @@ app.get(/^/, (req, res) => {
     case '/ip':
       if (req.query.userKey && req.query.userKey.toString() === configs.userKey) {
         res.status(200);
-        res.send(req.headers.host.toString());
+        res.send(JSON.stringify([req.headers.host]));
       } else {
         res.status(500);
         res.send('Unable to resolve userKey!');
