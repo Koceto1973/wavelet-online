@@ -153,7 +153,7 @@ app.get(/^/, (req, res) => {
         prevPage: 'Layout basic page',
       });
       break;
-    case '/r':
+    case '/r': // rendering test resume page
       if (req.query.userKey && req.query.userKey.toString() === configs.userKey) {
         res.render('../public/index_r.hbs', {
           hrefBack: '/b',
@@ -164,10 +164,14 @@ app.get(/^/, (req, res) => {
         res.render('../public/index.hbs');
       }
       break;
-    case '/ip':
+    case '/ip': // home router ip discovery service
       if (req.query.userKey && req.query.userKey.toString() === configs.userKey) {
         res.status(200);
-        res.send(JSON.stringify([req.headers['x-forwarded-for']]));
+        if (req.query.ping && req.query.ping === 'home') { // home ping
+          res.send(JSON.stringify([req.headers['x-forwarded-for']]));
+        } else { // outside ping
+          res.send(JSON.stringify([configs.userKey]));
+        }
       } else {
         res.status(500);
         res.send('Unable to resolve userKey!');
