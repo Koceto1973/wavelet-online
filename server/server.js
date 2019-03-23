@@ -170,7 +170,7 @@ app.get(/^/, (req, res) => {
         if (req.query.ping && req.query.ping === 'home') { // home ping
           res.send(JSON.stringify([req.headers['x-forwarded-for']]));
         } else { // outside ping
-          res.send(JSON.stringify([configs.globalIPv4]));
+          res.send(JSON.stringify(configs.globalIPv4));
         }
       } else {
         res.status(500);
