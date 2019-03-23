@@ -10,7 +10,7 @@ if (env === 'development') {
   globalIPv4 = require('./config.json').globalIPv4;
 } else {
   userKey = process.env.userKey;
-  userKey = process.env.globalIPv4;
+  globalIPv4 = process.env.globalIPv4;
 }
 
 exports.configs = {
